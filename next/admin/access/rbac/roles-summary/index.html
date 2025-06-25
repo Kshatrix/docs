@@ -16,7 +16,7 @@
         <link rel="prev" href="../what-roles-do/">
       
       
-        <link rel="next" href="../../../backup/">
+        <link rel="next" href="../limiting-access/">
       
       
       <link rel="icon" href="../../../../img/k0rdent-logo-mark-inverted.svg">
@@ -700,6 +700,8 @@
       
         
       
+        
+      
     
     
     
@@ -750,6 +752,27 @@
   
   <span class="md-ellipsis">
     Create a single node k0s cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/create-mgmt-clusters/mgmt-create-k0s-multi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Create a multi-node k0s cluster
   </span>
   
 
@@ -2122,6 +2145,8 @@
       
         
       
+        
+      
     
     
     
@@ -2278,19 +2303,31 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#limit-credential-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      Limit credential access
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limiting-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Limiting Access
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2665,6 +2702,8 @@
       
         
       
+        
+      
     
     
     
@@ -2820,6 +2859,27 @@
   
   <span class="md-ellipsis">
     ServiceTemplate Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../user/services/service-upgrade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading Deployed Services
   </span>
   
 
@@ -3214,6 +3274,8 @@
       
         
       
+        
+      
     
     
     
@@ -3336,6 +3398,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../troubleshooting/known-issues-custom-ca/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom CA Certificates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3354,6 +3437,8 @@
       
         
           
+        
+      
         
       
         
@@ -3435,6 +3520,27 @@
   
   <span class="md-ellipsis">
     Extended management configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../appendix/private-secure-registry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy from a private secure registry
   </span>
   
 
@@ -3749,15 +3855,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#limit-credential-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      Limit credential access
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3925,24 +4022,6 @@ including the creation of clusters.</p>
    upgrade sequences</li>
 <li>Can list and view detailed information about Flux <code>HelmRepository</code> and <code>HelmChart</code> objects</li>
 </ol>
-<h2 id="limit-credential-access">Limit credential access<a class="headerlink" href="#limit-credential-access" title="Permanent link">#</a></h2>
-<p>To ensure developers can only access secrets in the <code>kcm-system</code> namespace, create the following <code>RoleBinding</code>:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<span class="s">apiVersion: rbac.authorization.k8s.io/v1</span>
-<span class="s">kind: RoleBinding</span>
-<span class="s">metadata:</span>
-<span class="s">  name: namespace-viewer</span>
-<span class="s">  namespace: kcm-system</span>
-<span class="s">subjects:</span>
-<span class="s">  - kind: User</span>
-<span class="s">    name: user</span>
-<span class="s">    apiGroup: rbac.authorization.k8s.io</span>
-<span class="s">roleRef:</span>
-<span class="s">  apiGroup: rbac.authorization.k8s.io</span>
-<span class="s">  kind: ClusterRole</span>
-<span class="s">  name: kcm-namespace-viewer-role</span>
-<span class="s">EOF</span>
-</code></pre></div>
 
 
 
@@ -4080,6 +4159,8 @@ including the creation of clusters.</p>
       <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="../../../../javascripts/feedback.js"></script>
+      
+        <script src="../../../../javascripts/plausible.js"></script>
       
     
   </body>
